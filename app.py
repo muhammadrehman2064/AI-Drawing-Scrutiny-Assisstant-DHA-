@@ -30,7 +30,7 @@ import streamlit as st
 from PIL import Image
 from groq import Groq
 
-from ingest import build_index, search_byelaws
+from ingest import search_byelaws
 
 
 APP_TITLE = "DHA Architectural Drawing Scrutiny"
@@ -532,7 +532,7 @@ with st.sidebar:
         else:
             with st.spinner("Building FAISS index..."):
                 try:
-                    result = build_index(BYELAW_PDF, force=True)
+                    result = (BYELAW_PDF, force=True)
                     st.success(
                         f"Index built: {result.get('chunks', 0)} chunks."
                     )
@@ -573,7 +573,7 @@ if uploaded:
         if not Path("faiss_index/byelaws.faiss").exists():
             with st.spinner("First run: building Byelaws FAISS index..."):
                 try:
-                    build_index(BYELAW_PDF, force=False)
+                    (BYELAW_PDF, force=False)
                 except Exception as exc:
                     st.exception(exc)
                     st.stop()
