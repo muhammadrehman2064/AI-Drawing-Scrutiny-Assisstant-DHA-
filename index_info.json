@@ -1,0 +1,8 @@
+{
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "dimension": 384,
+  "total_vectors": 7157,
+  "source_pdf": "Updated-DHA-Const-Dev-Byelaws-2026.pdf",
+  "total_pages": 49,
+  "total_chunks": 7157
+}
