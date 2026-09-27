@@ -532,7 +532,7 @@ with st.sidebar:
         else:
             with st.spinner("Building FAISS index..."):
                 try:
-                    result = (BYELAW_PDF, force=True)
+                    result = some_function(BYELAW_PDF, force=True)
                     st.success(
                         f"Index built: {result.get('chunks', 0)} chunks."
                     )
